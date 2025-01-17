@@ -5,6 +5,7 @@
 #include <base/logger.h>
 #include <base/math.h>
 #include <base/system.h>
+#include <base/log.h>
 
 #include <game/generated/client_data.h>
 

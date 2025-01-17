@@ -3098,6 +3098,21 @@ void CClient::Run()
 		m_pConsole->Print(IConsole::OUTPUT_LEVEL_STANDARD, "client", aBuf, ColorRGBA(0.7f, 0.7f, 1.0f, 1.0f));
 	}
 
+	if (g_Config.m_SansGreetOnStart == 1) {
+		char *greetedPlayer;
+
+		if(g_Config.m_PlayerName[0])
+		{
+			greetedPlayer = g_Config.m_PlayerName;
+		}
+		else
+		{
+			greetedPlayer = "Nameless Tee";
+		}
+
+		log_log_color(LEVEL::LEVEL_INFO, {52, 131, 235}, "Sans Client", "Hello %s", greetedPlayer);
+	}
+
 	//
 	m_FpsGraph.Init(0.0f, 120.0f);
 
