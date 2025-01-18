@@ -746,9 +746,8 @@ MACRO_CONFIG_INT(GfxDriverIsBlocked, gfx_driver_is_blocked, 0, 0, 1, CFGFLAG_SAV
 
 MACRO_CONFIG_INT(ClVideoRecorderFPS, cl_video_recorder_fps, 60, 1, 1000, CFGFLAG_SAVE | CFGFLAG_CLIENT, "At which FPS the videorecorder should record demos.")
 
-// Sans client
-MACRO_CONFIG_INT(SansGreetOnStart, s_greet_on_start, 1, 0, 1, CFGFLAG_SAVE | CFGFLAG_CLIENT, "If the client greet you in F1 console on startup.")
-
 /*
  * Add config variables for mods below this comment to avoid merge conflicts.
  */
+
+#include "config_variables_sans.h"

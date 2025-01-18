@@ -2376,6 +2376,7 @@ if(CLIENT)
     components/menus_demo.cpp
     components/menus_ingame.cpp
     components/menus_settings.cpp
+    components/menus_settings_sans.cpp
     components/menus_settings7.cpp
     components/menus_settings_assets.cpp
     components/menus_start.cpp

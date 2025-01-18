@@ -3099,7 +3099,7 @@ void CClient::Run()
 	}
 
 	if (g_Config.m_SansGreetOnStart == 1) {
-		char *greetedPlayer;
+		const char *greetedPlayer;
 
 		if(g_Config.m_PlayerName[0])
 		{
