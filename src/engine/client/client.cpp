@@ -3099,18 +3099,18 @@ void CClient::Run()
 	}
 
 	if (g_Config.m_SansGreetOnStart == 1) {
-		const char *greetedPlayer;
+		const char *GreetedPlayer;
 
 		if(g_Config.m_PlayerName[0])
 		{
-			greetedPlayer = g_Config.m_PlayerName;
+			GreetedPlayer = g_Config.m_PlayerName;
 		}
 		else
 		{
-			greetedPlayer = "Nameless Tee";
+			GreetedPlayer = "Nameless Tee";
 		}
 
-		log_log_color(LEVEL::LEVEL_INFO, {52, 131, 235}, "Sans Client", "Hello %s", greetedPlayer);
+		log_log_color(LEVEL::LEVEL_INFO, {52, 131, 235}, "Sans Client", "Hello %s", GreetedPlayer);
 	}
 
 	//

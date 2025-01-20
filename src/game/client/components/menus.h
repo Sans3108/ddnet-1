@@ -704,6 +704,7 @@ public:
 		PAGE_SETTINGS,
 		PAGE_NETWORK,
 		PAGE_GHOST,
+		PAGE_SANS,
 
 		PAGE_LENGTH,
 
@@ -840,6 +841,7 @@ private:
 
 	// found in menus_ingame.cpp
 	void RenderInGameNetwork(CUIRect MainView);
+	void RenderInGameSans(CUIRect MainView);
 	void RenderGhost(CUIRect MainView);
 
 	// found in menus_settings.cpp

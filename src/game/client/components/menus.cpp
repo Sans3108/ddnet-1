@@ -718,6 +718,11 @@ void CMenus::RenderMenubar(CUIRect Box, IClient::EClientState ClientState)
 		if(DoButton_MenuTab(&s_PlayersButton, Localize("Players"), ActivePage == PAGE_PLAYERS, &Button, IGraphics::CORNER_NONE))
 			NewPage = PAGE_PLAYERS;
 
+		Box.VSplitLeft(90.0f, &Button, &Box);
+		static CButtonContainer s_SansButton;
+		if(DoButton_MenuTab(&s_SansButton, "Sans", ActivePage == PAGE_SANS, &Button, IGraphics::CORNER_NONE))
+			NewPage = PAGE_SANS;
+
 		Box.VSplitLeft(130.0f, &Button, &Box);
 		static CButtonContainer s_ServerInfoButton;
 		if(DoButton_MenuTab(&s_ServerInfoButton, Localize("Server info"), ActivePage == PAGE_SERVER_INFO, &Button, IGraphics::CORNER_NONE))
@@ -1179,6 +1184,10 @@ void CMenus::Render()
 			else if(m_GamePage == PAGE_NETWORK)
 			{
 				RenderInGameNetwork(MainView);
+			}
+			else if (m_GamePage == PAGE_SANS)
+			{
+				RenderInGameSans(MainView);
 			}
 			else if(m_GamePage == PAGE_GHOST)
 			{
