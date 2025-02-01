@@ -29,6 +29,9 @@
 
 #include "console.h"
 
+#include <string>
+#include <sstream>
+
 static constexpr float FONT_SIZE = 10.0f;
 static constexpr float LINE_SPACING = 1.0f;
 
@@ -880,6 +883,20 @@ void CGameConsole::CInstance::Dump()
 	{
 		log_error("console", "Failed to open '%s'", aFilename);
 	}
+}
+
+std::string CGameConsole::CInstance::DumpBuf()
+{
+	std::ostringstream Buffer;
+
+	PumpBacklogPending();
+	for (CInstance::CBacklogEntry *pEntry = m_Backlog.First(); pEntry; pEntry = m_Backlog.Next(pEntry))
+	{
+		Buffer.write(pEntry->m_aText, pEntry->m_Length);
+		Buffer.put('\n');
+	}
+
+	return Buffer.str();
 }
 
 CGameConsole::CGameConsole() :
